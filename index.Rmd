@@ -27,7 +27,7 @@ Have fun and May The Force Be with You!
 
 ## Simple Stock App linked from shinyapps.io
 
-<iframe src="https://ichew.shinyapps.io/_dataproducts/">
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" src="https://ichew.shinyapps.io/_dataproducts/">
 </iframe>
 
 --- .class #id 
