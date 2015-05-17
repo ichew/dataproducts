@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products Project</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products Project">
+  <meta name="author" content="ichew">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products Project</h1>
+    <h2>Pitching my Simple Stock App</h2>
+    <p>ichew<br/>R Beginner</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Project Pitch</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>You may have read that the movie Avengers: Age of Ultron have crossed the $1 billion mark in box-office worldwide after 15-May-2015.</p>
+
+<p>As this movie is owned by Disney, wouldn&#39;t you like to know how Disney stock prices react to this news? Has Disney stock price been trending up even before this movie&#39;s release?</p>
+
+<p>You can answer these questions and more using my Simple Stock App.</p>
+
+<p>I have embedded the app in the next slide.</p>
+
+<p>Have fun and May The Force Be with You! 
+(Will Disney&#39;s next blockbuster Star Wars boost its price?)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Simple Stock App linked from shinyapps.io</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="https://ichew.shinyapps.io/_dataproducts/">
+</iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Running embedded R Code (1/2)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Below is an R expression that will be run in the next slide.</p>
+
+<p>It extracts 5 days Disney stock prices from yahoo and plot a simple candlestick chart.</p>
+
+<p>This is to fulfil the requirements &quot;Did it contain an R expression that got evaluated and displayed?&quot;.</p>
+
+<pre><code class="r">options(warn=-1)
+library(quantmod)
+dis_env &lt;- new.env()
+getSymbols(&quot;DIS&quot;, env = dis_env, src = &quot;yahoo&quot;, 
+           from = as.Date(&quot;2015-05-04&quot;), to = as.Date(&quot;2015-05-08&quot;))
+vDIS &lt;- dis_env$DIS
+chartSeries(vDIS, name = &quot;Disney&quot;, type = &quot;candlesticks&quot;, 
+            theme = chartTheme(&quot;black&quot;), up.col = &quot;lightblue&quot;, dn.col = &quot;red&quot;,TA=NULL                  
+            )
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Running embedded R Code (2/2)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>[1] &quot;DIS&quot;
+<img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Project Pitch'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Simple Stock App linked from shinyapps.io'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Running embedded R Code (1/2)'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Running embedded R Code (2/2)'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
